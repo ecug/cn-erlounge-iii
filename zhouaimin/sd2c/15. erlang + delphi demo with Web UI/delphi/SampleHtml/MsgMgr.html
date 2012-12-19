@@ -1,0 +1,24 @@
+<script>
+function getMessenge() {
+  return external.Messenge;
+}
+
+window.onload = function() {
+  var info = document.getElementById('RegetCount');
+  var list = document.getElementById('UserList');
+  function getMonitor() {
+	return function(){
+	  info.innerText = parseInt(info.innerText) + 1;
+	  list.value = getMessenge();
+	}
+  }
+
+  setInterval(getMonitor(), 500);
+}
+</script>
+
+<body scroll=no>
+<div>用户列表(<span id="RegetCount">0</span>)</div>
+<textarea id="UserList" style="width:80%;height:80%;">
+</textarea>
+</body>

@@ -1,0 +1,29 @@
+<script>
+function getMessenge_delphi() {
+  return external.Messenge;
+}
+
+function getMessenge() {
+  with (new XMLHttpRequest())
+    return open("GET", "/?user_list", false), send(null), responseText;
+}
+
+window.onload = function() {
+  var info = document.getElementById('RegetCount');
+  var list = document.getElementById('UserList');
+  function getMonitor() {
+	return function(){
+	  info.innerHTML = parseInt(info.innerHTML) + 1;
+	  list.value = getMessenge();
+	}
+  }
+
+  setInterval(getMonitor(), 500);
+}
+</script>
+
+<body scroll=no>
+<div>User list at the messenger server:(<span id="RegetCount">0</span>)</div>
+<textarea id="UserList" style="width:80%;height:80%;">
+</textarea>
+</body>

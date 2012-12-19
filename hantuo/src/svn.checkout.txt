@@ -1,0 +1,1 @@
+svn checkout http://erl-chess.googlecode.com/svn/trunk/ erl-chess-read-only
